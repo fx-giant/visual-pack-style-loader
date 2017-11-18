@@ -1,0 +1,9 @@
+{
+   groupId: "eng.visual",
+   packageId: "eng.visual.styleLoader",
+   visualName: "styleLoader",
+   displayName: "Style Loader",
+   version : "1.0.0",
+   scripts : ["styleLoader.js"],
+   styles : ["styleLoader.css"],
+}

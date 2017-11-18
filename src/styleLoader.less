@@ -1,0 +1,69 @@
+$headerFontColor: rgb(192, 214, 249); $outframeBorderColor: rgba(250,250,250,0.6); $headerBackgroundColor: rgba(0,32,194,0.5); $borderColor: #4286f4; $borderThickness: 1px; $borderOffset: 0px; $thickBorderColor: rgba(122, 166, 255,0.9); $thickBorderDimension: 25px; $borderRadius: 2px; .header {
+    background-color: $headerBackgroundColor;
+    width: auto;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    padding: 2px 60px;
+    display: flex;
+    justify-content: center;
+    /*darker blue */
+    /**/
+    /*offset, middle ground, border*/
+    > p {
+        align-self: center;
+        color: $headerFontColor;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+}
+
+
+#content {
+    position: relative;
+    width: 600px;
+    height: 250px;
+    border: 0px solid $outframeBorderColor;
+    border-radius: $borderRadius;
+    top: 40px;
+    left: 40px;
+    box-shadow: inset 0px 0px 3px 1px $borderColor;
+}
+
+#content:before,
+#content:after,
+.content__bottomBoreder:before,
+.content__bottomBoreder:after {
+    position: absolute;
+    width: $thickBorderDimension;
+    height: $thickBorderDimension;
+    border-color: $thickBorderColor;
+    border-radius: $borderRadius;
+    / or whatever colour / border-style: solid;
+    / or whatever style / content: ' ';
+}
+
+#content:before {
+    top: $borderOffset;
+    left: $borderOffset;
+    border-width: $borderThickness 0 0 $borderThickness
+}
+
+#content:after {
+    top: $borderOffset;
+    right: $borderOffset;
+    border-width: $borderThickness $borderThickness 0 0
+}
+
+#content > :first-child:before {
+    bottom: $borderOffset;
+    right: $borderOffset;
+    border-width: 0 $borderThickness $borderThickness 0
+}
+
+#content > :first-child:after {
+    bottom: $borderOffset;
+    left: $borderOffset;
+    border-width: 0 0 $borderThickness $borderThickness
+}
